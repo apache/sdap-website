@@ -1,46 +1,7 @@
-<!DOCTYPE html>
+---
+---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Apache SDAP - Science Data Analytics Platform</title>
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
-    <!--[if lt IE 9]>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.ie.min.css" />
-    <![endif]--> 
-  </head>
-  <body>
-    <a class="github-fork-ribbon" href="https://github.com/apache?utf8=✓&q=incubator-sdap&type=&language=" title="Fork me on GitHub" target="_blank" >Fork me on GitHub</a> 
-    <div class="container">
-
-      <div class="logos">
-        <!--img src="/images/logo-nasa-jpl-caltech.png" class="pull-left" /-->
-      </div>
-
-      <!-- navigation bar -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="/">SDAP</a>
-          </div>
-          <div class="navbar-right">
-            <ul class="nav navbar-nav">
-              <li><a href="/docs">Docs</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/team">Team</a></li>
-              <li><a href="/resources">Resources</a></li>
-              <li><a href="/publications">Publications</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
+{% include header.html %}
 
 <h1>Team</h1>
 
@@ -53,7 +14,7 @@
 <div class="team row">
 
   <div class="team-member col-md-6">
-    <img src="/images/" class="team-avatar img-thumbnail" />
+    <img src="{{ site.baseurl }}/images/" class="team-avatar img-thumbnail" />
     <h4>Ed Armstrong</h4>
     <dl>
       <dt>GitHub:</dt>
@@ -62,7 +23,7 @@
   </div>
 
   <div class="team-member col-md-6">
-    <img src="/images/avatar-lewismc.jpeg" class="team-avatar img-thumbnail" />
+    <img src="{{ site.baseurl }}/images/avatar-lewismc.jpeg" class="team-avatar img-thumbnail" />
     <h4>Lewis John McGibbney, Ph.D.</h4>
     <dl>
       <dt>GitHub:</dt>
@@ -79,7 +40,7 @@
 <div class="team row">
 
   <div class="team-member col-md-6">
-    <img src="/images/" class="team-avatar img-thumbnail" />
+    <img src="{{ site.baseurl }}/images/" class="team-avatar img-thumbnail" />
     <h4>Ed Armstrong</h4>
     <dl>
       <dt>GitHub:</dt>
@@ -90,7 +51,7 @@
   </div>
 
   <div class="team-member col-md-6">
-    <img src="/images/avatar-lewismc.jpeg" class="team-avatar img-thumbnail" />
+    <img src="{{ site.baseurl }}/images/avatar-lewismc.jpeg" class="team-avatar img-thumbnail" />
     <h4>Lewis John McGibbney, Ph.D.</h4>
     <dl>
       <dt>GitHub:</dt>
@@ -107,7 +68,7 @@
 <div class="team row">
 
   <div class="team-member col-md-6">
-    <img src="/images/" class="team-avatar img-thumbnail" />
+    <img src="{{ site.baseurl }}/images/" class="team-avatar img-thumbnail" />
     <h4>Ed Armstrong</h4>
     <dl>
       <dt>GitHub:</dt>
@@ -118,7 +79,7 @@
   </div>
 
   <div class="team-member col-md-6">
-    <img src="/images/avatar-lewismc.jpeg" class="team-avatar img-thumbnail" />
+    <img src="{{ site.baseurl }}/images/avatar-lewismc.jpeg" class="team-avatar img-thumbnail" />
     <h4>Lewis John McGibbney, Ph.D.</h4>
     <dl>
       <dt>GitHub:</dt>
@@ -135,7 +96,7 @@
 <div class="team row">
 
   <div class="team-member col-md-6">
-    <img src="/images/" class="team-avatar img-thumbnail" />
+    <img src="{{ site.baseurl }}/images/" class="team-avatar img-thumbnail" />
     <h4>Ed Armstrong</h4>
     <dl>
       <dt>GitHub:</dt>
@@ -146,7 +107,7 @@
   </div>
 
   <div class="team-member col-md-6">
-    <img src="/images/avatar-lewismc.jpeg" class="team-avatar img-thumbnail" />
+    <img src="{{ site.baseurl }}/images/avatar-lewismc.jpeg" class="team-avatar img-thumbnail" />
     <h4>Lewis John McGibbney, Ph.D.</h4>
     <dl>
       <dt>GitHub:</dt>
@@ -201,18 +162,4 @@
 
 <p>The best way to reach us is to contact us directly by email or to visit our <a class="external" href="https://github.com/capstone-coal">GitHub Organization</a>. Our geographically distributed team meets regularly by videoconference and collaborates on research and development primarily through our mailing list. You may view our messages on <a class="external" href="https://groups.google.com/forum/#!forum/coal-capstone">Google Groups</a> or ask to join, however only invited people will be able to post.</p>
 
-      <!-- footer -->
-      <nav class="navbar navbar-default">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="">SDAP</a>
-        </div>
-        <div class="navbar-text pull-right">&copy; 2017 The Apache Software Foundation. Licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br/>
-        Apache SDAP, SDAP, Apache, the Apache feather logo, and the Apache SDAP project logo are trademarks of The Apache Software Foundation.</div>
-      </nav>
-
-      <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-    </div>
-  </body>
-</html>
-
+{% include footer.html %}
