@@ -1,0 +1,33 @@
+---
+layout: post
+title: "GDAL ENVI Rotation Bug Fix"
+author: Taylor Alexander Brown
+date: 2017-04-30
+---
+
+<p>COAL is a library for processing imaging spectrometer data from <a href="https://aviris.jpl.nasa.gov/" class="external">AVIRIS</a> and <a href="https://avirisng.jpl.nasa.gov/" class="external">AVIRIS-NG</a>. The multiband raster imagery is provided in <a href="http://www.harrisgeospatial.com/docs/enviheaderfiles.html" class="external">ENVI</a> format. COAL uses the <a href="http://gdal.org/" class="external">Geospatial Data Abstraction Library (GDAL)</a> and the Free and Open Source geographic information system <a href="http://qgis.org/en/site/" class="external">QGIS</a> to process imagery and combine it with geographic data for analysis. Due to a bug in GDAL, rotation information in ENVI files was not handled and the images were not imported correctly. This post describes a bug fix which was developed for COAL and contributed back to GDAL.</p>
+
+<div class="row">
+  <div class="col-md-6">
+    <figure class="figure">
+      <img src="/images/gdal-rotation-bug.png" class="figure-img img-responsive" alt="Incorrectly rotated flightline" />
+      <figcaption class="figure-caption"><b>Figure 1:</b> Incorrectly rotated flightline.</figcaption>
+    </figure>
+  </div>
+  <div class="col-md-6">
+    <figure class="figure">
+      <img src="/images/gdal-rotation-fix.png" class="figure-img img-responsive" alt="Correctly rotated flightline" />
+      <figcaption class="figure-caption"><b>Figure 2:</b> Correctly rotated flightline.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<!--more-->
+
+<p>The rotation issue was first discussed <a href="https://groups.google.com/d/msg/coal-capstone/nXhRb1fA7lg/aW8efhNUAgAJ" class="external">on our mailing list</a> after loading the imagery into GIS applications. The same behavior was observed in QGIS, GRASS, and ArcMap, all of which use the underlying GDAL library. To help solve the problem, a <a href="https://gis.stackexchange.com/questions/229952/rotate-envi-hyperspectral-imagery-with-gdal" class="external">question</a> was posted to the GIS StackExchange describing the issue and requesting assistance. The proposed answer did not work, suggesting it was due to a <a href="https://trac.osgeo.org/gdal/ticket/1778" class="external">bug</a> in the ENVI driver of the GDAL library itself.</p>
+
+<p>It was found that the ENVI rotation parameter, which is not documented in the header file format, was ignored by GDAL when reading the geographic transformation information. As a result, images were imported incorrectly by all software using GDAL, including the Python interface, command-line utilities, and GIS applications. The problem affected the GDAL source file <code>gdal/frmts/raw/envidataset.cpp</code>. Editing this file with the values suggested by the StackExchange answer solved the issue, allowing images to be rotated correctly.</p>
+
+<p>The solution was shared <a href="https://lists.osgeo.org/pipermail/gdal-dev/2017-February/046127.html" class="external">on the GDAL mailing list</a> where it received feedback from the GDAL developers. After addressing the changes requested by the maintainers, a <a href="https://github.com/OSGeo/gdal/pull/197" class="external">pull request</a> was submitted. The maintainer added write support to <a href="https://trac.osgeo.org/gdal/changeset/37506" class="external">the patch</a> and merged it into the latest version of the library scheduled for release on 2017-05-01 as part of GDAL <a href="https://trac.osgeo.org/gdal/milestone/2.2.0" class="external">2.2.0</a>.
+
+<p>The resolution of this bug facilitated continued progress in COAL for processing and visualizing georeferenced raster imagery. It also provided experience contributing to another Free and Open Source Software library. Once the latest version of GDAL is released, QGIS and other applications will have enhanced capabilities for reading and writing ENVI files from AVIRIS, AVIRIS-NG, and other remote-sensing devices.</p>
