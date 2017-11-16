@@ -20,7 +20,9 @@
     <div class="container">
 
       <div class="logos">
-        <!--img src="/images/logo-nasa-jpl-caltech.png" class="pull-left" /-->
+        <a href="https://incubator.apache.org">
+          <img src="/images/egg-logo.png" class="pull-left" />
+        </a>
       </div>
 
       <!-- navigation bar -->
@@ -44,228 +46,11 @@
 
 <h1>Documentation</h1>
 
-<p>This page describes how to install, use, and contribute to COAL.</p>
-
-<h2>Contents</h2>
-
-<ul>
-  <li><a href="#dependencies">Dependencies</a></li>
-  <ul>
-    <li><a href="#numpy-spectral">Numpy and Spectral Python</a></li>
-    <li><a href="#gdal">GDAL</a></li>
-    <li><a href="#qgis">QGIS</a></li>
-  </ul>
-  <li><a href="#installation">Installation</a></li>
-  <li><a href="#downloading">Downloading Data</a></li>
-  <ul>
-    <li><a href="#udsl06">USGS Digital Spectral Library 06</a></li>
-    <li><a href="#aviris">AVIRIS</a></li>
-    <li><a href="#national-map">The National Map</a></li>
-  </ul>
-  <li><a href="#usage">Usage</a></li>
-  <ul>
-    <li><a href="#mineral">Mineral Classification</a></li>
-    <li><a href="#mining">Mining Identification</a></li>
-    <li><a href="#environment">Environmental Correlation</a></li>
-  </ul>
-  <li><a href="#development">Development</a></li>
-</ul>
-
-<h2 id="dependencies">Dependencies</h2>
-
-<p>COAL has been tested on x86_64 GNU/Linux and is expected to work without modification on any Unix-like system. COAL supports <a href="https://www.python.org/" class="external">Python</a> versions 2.6+ and 3.3+ Required dependencies include <a href="http://www.numpy.org/" class="external">NumPy</a>, <a href="http://www.spectralpython.net/" class="external">Spectral Python</a>, and <a href="http://gdal.org/" class="external">GDAL</a> version 2.2.0+. The recommended geographic information system is <a href="http://qgis.org/en/site/" class="external">QGIS</a>.
-
-<h3 id="numpy-spectral">Numpy and Spectral Python</h3>
-
-<p>The easiest way to install both Numpy and Spectral Python is from the <a href="https://pypi.python.org/pypi" class="external">Python Package Index (PyPI)</a> with <code>pip</code>:</p>
-
-<pre>$ sudo pip install spectral</pre>
-
-<h3 id="gdal">GDAL</h3>
-
-<p>The command-line utilities from GDAL 2.2.0+ are required for correct processing of <a href="/2017/04/30/gdal-envi-rotation-bug-fix.html">rotated ENVI files</a> in the environmental correlation module. If necessary, GDAL can be installed from source following the instructions for <a href="https://trac.osgeo.org/gdal/wiki/BuildingOnUnix" class="external">Building on Unix</a>.</p>
-
-<h4>Install from Source</h4>
-
-<p>Check out the source code:</p>
-
-<pre>$ git clone https://github.com/OSGeo/gdal.git
-$ cd gdal/gdal
-$ git checkout --track origin/2.2</pre>
-
-<p>Configure GDAL with the Python bindings. The default installation directory is <code>/usr/local</code>. Compile with <code>make</code> and install as root with either <code>make install</code> or <a href="https://wiki.debian.org/CheckInstall" class="external"><code>checkinstall</code></a> to create a package that can be easily installed and uninstalled. GDAL does not include a <code>make uninstall</code> target.</p>
-
-<pre>$ ./configure --with-python
-$ make
-$ sudo checkinstall</pre>
-
-<p>After installation, the correct version can be verified by calling the command-line interface or Python API.</p>
-
-<pre>$ gdalwarp --version
-GDAL 2.2.0beta2, released 2017/04/23</pre>
-
-<pre>>>> import osgeo.gdal
->>> print osgeo.gdal.__version__
-2.2.0beta2
->>> print osgeo.gdal.VersionInfo()
-2020000
-</pre>
-
-<h3 id="qgis">QGIS</h3>
-
-<p>QGIS is the recommended geographic information system for viewing COAL data products. QGIS must be linked against GDAL 2.2.0+ to import rotated ENVI files correctly. If necessary, install QGIS from source to link to the correct version of GDAL.</p>
-
-<h4>Install from source</h4>
-
-<p>See the <code>INSTALL</code> file in the root of the QGIS source tree for more details. The following steps can be used to install QGIS from a Debian source package. We can verify that Debian 8 was used to build QGIS however we encourage feedback and use of newer Debian versions.</p>
-
-<p>Install the dependencies and download the Debian source package with <code>apt-get</code> or <code>aptitude</code>.</p>
-
-<pre>$ sudo apt-get update
-$ sudo apt-get upgrade
-$ sudo apt-get build-dep qgis
-$ sudo apt-get install bison cmake doxygen flex git graphviz grass-dev libexpat1-dev libfcgi-dev libgdal-dev libgeos-dev libgsl0-dev libopenscenegraph-dev libosgearth-dev libpq-dev libproj-dev libqt4-dev libqt4-opengl-dev libqtwebkit-dev libqwt-dev libspatialindex-dev libspatialite-dev libsqlite3-dev pkg-config pyqt4-dev-tools python-all python-all-dev python-qt4 python-qt4-dev python-sip python-sip-dev txt2tags xauth xfonts-100dpi xfonts-75dpi xfonts-base xfonts-scalable xvfb devscripts pkg-kde-tools checkinstall
-$ apt-get source qgis
-$ cd qgis-2.4.0</pre></code>
-
-<p>Create a build directory and configure QGIS with <code>cmake</code>.</p>
-
-<pre>$ mkdir build-master
-$ cd build-master
-$ cmake -Wno-dev -DCMAKE_INSTALL_PREFIX=/usr/local ..</pre>
-
-<p>Verify that the line <code>-- Found GDAL: /usr/local/lib/libgdal.so (2.2.0beta2)</code> appears in the output. Then compile and install as root.</p>
-
-<pre>$ make
-$ sudo make install</pre>
-
-<h2 id="installation">Installation</h2>
-
-<p>The COAL Python package <code>pycoal</code> can be installed from PyPI with <code>pip</code>.</p>
-
-<pre>$ sudo pip install pycoal</pre>
-
-<p>The latest development source may be obtained from <a href="https://github.com/capstone-coal/pycoal" class="external">GitHub</a>.</p>
-
-<h2 id="downloading">Downloading Data</h2>
-
-<h3 id="udsl06">USGS Digital Spectral Library 06</h3>
-
-<p>COAL was developed using classifications from the <a href="https://speclab.cr.usgs.gov/spectral.lib06/" class="external">USGS Digital Spectral Library 06</a>. The ENVI spectral library files <a href="ftp://ftpext.cr.usgs.gov/pub/cr/co/denver/speclab/pub/spectral.library/splib06.library/Convolved.libraries/s06av95a_envi.hdr" class="external"><code>s06av95a_envi.hdr</code></a> and <a href="ftp://ftpext.cr.usgs.gov/pub/cr/co/denver/speclab/pub/spectral.library/splib06.library/Convolved.libraries/s06av95a_envi.sli" class="external"><code>s06av95a_envi.sli</code></a> can be accessed via FTP.</p>
-
-<h3 id="aviris">AVIRIS</h3>
-
-<p>Imaging spectrometer data from the Jet Propulsion Laboratory can be downloaded or requested via the <a href="https://aviris.jpl.nasa.gov/" class="external">AVIRIS</a> and <a href="https://avirisng.jpl.nasa.gov/" class="external">AVIRIS-NG</a> websites.</p>
-
-<h3 id="national-map">The National Map</h3>
-
-<p><a href="https://nationalmap.gov/" class="external">The National Map</a> from the United States Geological Survey (USGS) provides detailed hydrography, transportation, and elevation datasets.</p>
-
-<h2 id="usage">Usage</h2>
-
-<p>This section demonstrates basic usage of COAL. Refer to the <a class="external" href="https://pycoal.readthedocs.io/en/latest/">API reference</a> for detailed documentation. The following images display several COAL data products.</p>
-
-<div class="row">
-  <div class="col-sm-6">
-    <figure class="figure">
-      <img src="/images/visible-light.png" class="figure-img img-responsive" alt="Visible-light image" />
-      <figcaption class="figure-caption"><b>Figure 1:</b> Visible-light image.</figcaption>
-    </figure>
-  </div>
-  <div class="col-sm-6">
-    <figure class="figure">
-      <img src="/images/mineral-classified.png" class="figure-img img-responsive" alt="Mineral classified image" />
-      <figcaption class="figure-caption"><b>Figure 2:</b> Mineral classified image.</figcaption>
-    </figure>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-6">
-    <figure class="figure">
-      <img src="/images/mining-classified.png" class="figure-img img-responsive" alt="Mining classified image" />
-      <figcaption class="figure-caption"><b>Figure 3:</b> Mining classified image.</figcaption>
-    </figure>
-  </div>
-  <div class="col-sm-6">
-    <figure class="figure">
-      <img src="/images/environmental-correlation.png" class="figure-img img-responsive" alt="Environmental correlation image" />
-      <figcaption class="figure-caption"><b>Figure 4:</b> Environmental correlation image.</figcaption>
-    </figure>
-  </div>
-</div>
-
-<h3 id="mineral">Mineral Classification</h3>
-
-<p>The <a href="https://pycoal.readthedocs.io/en/latest/mineral.html" class="external">Mineral Classification API</a> provides methods for generating visible-light (Figure 1) and mineral classified (Figure 2) images. Mineral classification can take hours to days depending on the size of the spectral library and the available computing resources, so running a script in the background is recommended.</p>
-
-<pre>#!/usr/bin/env python
-import pycoal
-
-# path to spectral library
-library_filename = "s06av95a_envi.hdr"
-
-# path to orthocorrected, scaled-reflectance image
-input_filename = "ang20150420t182050_corr_v1e_img.hdr"
-
-# path to save RGB image
-rgb_filename = "ang20150420t182050_corr_v1e_img_rgb.hdr"
-
-# path to save mineral classified image
-classified_filename = "ang20150420t182050_corr_v1e_img_class.hdr"
-
-# create a new mineral classification instance
-mineral_classification = pycoal.mineral.MineralClassification(input_filename)
-
-# generate a georeferenced visible-light image
-mineral_classification.to_rgb(input_filename, rgb_filename)
-
-# generate a mineral classified image
-mineral_classification.classify_image(input_filename, classified_filename)</pre>
-
-<h3 id="mining">Mining Identification</h3>
-
-<p>The <a href="https://pycoal.readthedocs.io/en/latest/mining.html" class="external">Mining Identification API</a> filters mineral classified images to identify specific classes of interest (Figure 3), by default proxies for coal mining in the USGS Digital Spectral Library 06.</p>
-
-<pre>#!/usr/bin/env python
-import pycoal
-
-# path to mineral classified image
-mineral_filename = "ang20150420t182050_corr_v1e_img_class.hdr"
-
-# path to save mining classified image
-mining_filename = "ang20150420t182050_corr_v1e_img_class_mining.hdr"
-
-# create a new mining classification instance
-mining_classification = pycoal.mining.MiningClassification()
-
-# generate a mining classified image
-mining_classification.classify_image(mineral_filename, mining_filename)</pre>
-
-<h3 id="environment">Environmental Correlation</h3>
-
-<p>The <a href="https://pycoal.readthedocs.io/en/latest/environment.html" class="external">Environmental Correlation API</a> finds pixels in a mining classified image that are within a certain number of meters from features in a vector layer (Figure 4) such as flow lines in the National Hydrography Dataset (NHD).</p>
-
-<pre>#!/usr/bin/env python
-import pycoal
-
-# path to mining classified image
-mining_filename = "ang20150420t182050_corr_v1e_img_class_mining.hdr"
-
-# path to hydrography data
-vector_filename = "NHDNM/Shape/NHDFlowline.shp"
-
-# path to save environmental correlation image
-correlation_filename = "ang20150420t182050_corr_v1e_img_class_mining_NHDFlowline_correlation.hdr"
-
-# create a new environmental correlation instance
-environmental_correlation = pycoal.environment.EnvironmentalCorrelation()
-
-# generate an environmental correlation image of mining pixels within 10 meters of a stream
-environmental_correlation.intersect_proximity(mining_filename, vector_filename, 10.0, correlation_filename)</pre>
+<p>This page describes how to install, use, and contribute to SDAP.</p>
 
 <h2 id="development">Development</h2>
 
-<p>Contribute to the project through our <a class="external" href="https://github.com/capstone-coal">GitHub Organization</a>, refer to the COAL <a class="external" href="https://github.com/capstone-coal/pycoal/wiki">wiki</a> for development documentation, and contact the <a href="/team.html">team</a> to get involved.</p>
+<p>Get involved and contribute to SDAP through our <a href="http://sdap.apache.org/team">Community Hubs</a>.
 
       <!-- footer -->
       <nav class="navbar navbar-default">
@@ -274,6 +59,7 @@ environmental_correlation.intersect_proximity(mining_filename, vector_filename, 
         </div>
         <div class="navbar-text pull-right">&copy; 2017 The Apache Software Foundation. Licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br/>
         Apache SDAP, SDAP, Apache, the Apache feather logo, and the Apache SDAP project logo are trademarks of The Apache Software Foundation.</div>
+        <div class="navbar-text pull-right">Apache SDAP is an effort undergoing <a href="https://incubator.apache.org/">Incubation</a> at The Apache Software Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
       </nav>
 
       <script src="js/jquery.min.js"></script>
