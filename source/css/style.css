@@ -60,3 +60,8 @@ figcaption {
 blockquote {
     font-size: small;
 }
+
+.slider-transback {
+    background:#7f7f7f;
+    background:rgba(0,0,0,0.7);
+}
