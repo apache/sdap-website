@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Apache SDAP - Science Data Analytics Platform</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.ie.min.css" />
+    <![endif]--> 
+  </head>
+  <body>
+    <a class="github-fork-ribbon" href="https://github.com/apache?utf8=✓&q=incubator-sdap&type=&language=" title="Fork me on GitHub" target="_blank" >Fork me on GitHub</a> 
+    <div class="container">
+
+      <div class="logos">
+        <a href="https://incubator.apache.org">
+          <img src="/images/egg-logo.png" class="pull-left" />
+        </a>
+      </div>
+
+      <!-- navigation bar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">SDAP</a>
+          </div>
+          <div class="navbar-right">
+            <ul class="nav navbar-nav">
+              <li><a href="/docs">Docs</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/team">Team &amp; Community</a></li>
+              <li><a href="/resources">Resources</a></li>
+              <li class="dropdown toggle">
+              	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Apache <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="http://www.apache.org/foundation/how-it-works.html">Apache Software Foundation</a></li>
+                  <li><a href="http://www.apache.org/licenses/">Apache License</a></li>
+                  <li><a href="http://www.apache.org/foundation/sponsorship">Sponsorship</a></li>
+                  <li><a href="http://www.apache.org/foundation/thanks.html">Thanks</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+<h1>An introduction to MUDROD recommendation algorithm</h1>
+
+<p>Posted <b>2018-04-23</b> by <b>Lewis John McGibbney</b></p>
+
+<p>With the recent advances in remote sensing satellites and other sensors, geographic datasets have been growing faster than ever. In response, a number of Spatial Data Infrastructure (SDI) components (e.g. catalogues and portals) have been developed to archive and made those datasets available online. However, finding the right data for scientific research and application development is still a challenge due to the lack of data relevancy information.</p>
+
+<p>Recommendation has become extremely common in recent years and are utilized in a variety of areas to help users quickly find useful information. Wee propose a recommendation system to improve geographic data discovery by mining and utilizing metadata and usage logs. Metadata abstracts are processed with natural language processing methods to find semantic relationship between metadata. Metadata variables are used to calculate spatial and temporal similarity between metadata. In addition, portal logs are analysed to introduce user preference.</p>
+
+<center>
+	<img src="/images/recommendation.png" />
+	Figure 1. Recommendation workflow
+</center>
+
+<p>The system starts by pre-processing raw web logs and metadata (Figure 1). After pre-processing step, sessions are reconstructed from raw web logs and then used to calculate session-based metadata similarity. Metadata are harvested from PO. DAAC web service APIs. Metadata variable values are then converted to value using the united unit to calculate metadata content similarity. All these above similarities are calculated offline and stored in Elasticsearch. Once user views a metadata, the system finds the top-k related metadata with hybrid recommendation. The hybrid recommendation module integrates results from content-based recommendation and session-based recommendation methods and ranks the final recommendation list in a descending order of similarity.</p>
+
+
+<div>
+
+<b>Previous:</b> <a href="/weekly/update/2018/04/23/ranking-algorithms.html">An introduction to MUDROD ranking algorithm</a>
+
+</div>
+
+<div>
+
+<b>Next:</b> <a href="/weekly/update/2018/04/23/vocabulary-similarity-algorithm.html">An introduction to MUDROD vocabulary similarity calculation algorithm</a>
+
+</div>
+
+      <!-- footer -->
+      <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="">SDAP</a>
+        </div>
+        <div class="navbar-text pull-right">&copy; 2017 The Apache Software Foundation. Licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.<br/>
+        Apache SDAP, SDAP, Apache, the Apache feather logo, and the Apache SDAP project logo are trademarks of The Apache Software Foundation.</div>
+        <div class="navbar-text pull-right">Apache SDAP is an effort undergoing <a href="https://incubator.apache.org/">Incubation</a> at The Apache Software Foundation (ASF), sponsored by the Incubator. Incubation is required of all newly accepted projects until a further review indicates that the infrastructure, communications, and decision making process have stabilized in a manner consistent with other successful ASF projects. While incubation status is not necessarily a reflection of the completeness or stability of the code, it does indicate that the project has yet to be fully endorsed by the ASF.</div>
+      </nav>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+    </div>
+  </body>
+</html>
+
