@@ -67,7 +67,7 @@
         <div class="carousel-inner" role="listbox">
 
           <div class="item active">
-            <img src="images/carousel-sla.jpg" alt="Sea Level Anomaly.
+            <img src="images/carousel-slcp-dat2.jpg" alt="Sea Level Anomaly.
 Courtesy NASA/JPL-Caltech." title="Sea Level Anomaly.
 Courtesy NASA/JPL-Caltech." />
             <div class="container">
@@ -99,7 +99,7 @@ Courtesy NASA/JPL-Caltech." />
           </div>
 
           <div class="item">
-            <img src="images/carousel-architecture.jpg" alt="The architecture of SDAP, which is the implementation of OceanWorks." title="System Architecture." />
+            <img src="images/carousel-acf.jpg" alt="The architecture of SDAP, which is the implementation of OceanWorks." title="System Architecture." />
             <div class="container">
               <div class="carousel-caption slider-transback">
                 <h1>System Architecture</h1>
@@ -109,11 +109,11 @@ Courtesy NASA/JPL-Caltech." />
           </div>
 
           <div class="item">
-            <img src="images/carousel-doms.jpg" alt="Distributed Oceanographic Matchup Service" title="Distributed Oceanographic Matchup Services." />
+            <img src="images/carousel-coverage.jpg" alt="COVERAGE" title="CEOS Ocean Variables Enabling Research and Applications for GEO" />
             <div class="container">
               <div class="carousel-caption slider-transback">
-                <h1>Distributed Oceanographic Matchup Service</h1>
-                <p>Distributed Oceanographic Matchup Service</p>
+                <h1>COVERAGE</h1>
+                <p>CEOS Ocean Variables Enabling Research and Applications for GEO</p>
               </div>
             </div>
           </div>
@@ -132,18 +132,22 @@ Courtesy NASA/JPL-Caltech." />
 
       <!-- overview -->
       <h1>Science Data Analytics Platform (SDAP)</h1>
-      <p>SDAP is a technology software solution currently geared to better enable scientists involved in advancing the study of the Earth's physical oceanography. With increasing global temperature, warming of the ocean, and melting ice sheets and glaciers, the impacts can be observed from changes in anomalous ocean temperature and circulation patterns, to increasing extreme weather events and stronger/more frequent hurricanes, sea level rise and storm surges affecting coastlines, and may involve drastic changes and shifts in marine ecosystems.</p>
-      <p>Ocean science communities are relying on data distributed through data centers such as the JPL's Physical Oceanographic Data Active Archive Center (PO.DAAC) to conduct their research. In typical investigations, oceanographers follow a traditional workflow for using datasets: search, evaluate, download, and apply tools and algorithms to look for trends. While this workflow has been working very well historically for the oceanographic community, it cannot scale if the research involves massive amount of data.</p>
-      <p>NASA's Surface Water and Ocean Topography (SWOT) mission, scheduled to launch in April of 2021, is expected to generate over 20PB data for a nominal 3-year mission. This will challenge all existing NASA Earth Science data archival/distribution paradigms. It will no longer be feasible for Earth scientists to download and analyze such volumes of data. SDAP was therefore developed primarily as a Web-service platform for big ocean data science at the PO.DAAC with open source solutions used to enable fast analysis of oceanographic data. SDAP has been developed collaboratively between JPL, FSU, NCAR, and GMU and is rapidly maturing to become the generic platform for the next generation of big science data solutions. The platform is an orchestration of several previously funded NASA big ocean data solutions using cloud technology, which include:
+      <p>The Earth and Space Science Informatics community has a long history of building many innovative solutions. With a quick search on the web we can find various tools that offer similar capabilities such as search, visualization, subsetting, analysis, etc. The community is very good at building domain-specific solution for specific applications. The lack of cohesiveness among these tools introduces technology gaps, which lead to even more stovepipe solutions. An Analytics Center Framework (ACF) is an architectural concept to encapsulate scalable computational and data infrastructures to harmonize data, tools and computational resources that enable scientific investigations. The Apache Science Data Analytics Platform (SDAP) is a professional open source implementation of an ACF. It is an ensemble of big data technologies for Earth science that is optimized to leverage the elastic cloud or on-premise computing clusters. SDAP has a growing collection of webservice capabilities including:</p>
       <ul>
-        <li>data analysis (NEXUS)</li>
-        <li>anomaly detection (OceanXtremes)</li>
-        <li>matchup (DOMS)</li>
-        <li>subsetting</li>
-        <li>discovery (MUDROD)</li>
-        <li>visualization (VQSS)</li>
+        <li>Satellite and model data analysis</li>
+        <li>Anomaly detection</li>
+        <li>In situ data integration and matchup</li>
+        <li>Fast data subsetting</li>
+        <li>ML-Driven search and discovery</li>
       </ul>
-      SDAP will enable web-accessible, fast data analysis directly on huge scientific data archives to minimize data movement and provide access, including subset, only to the relevant data. In essence, the above information workflow can be visualized by the image below where a transformation of data to knowledge occurs as one moves from left to right.</p>
+      <h2>Distributed SDAP</h2>
+      <p>The number of publicly hosted SDAP instances has grown over the years. By making their data and services available to the public, these discipline-specific SDAP instances are contributing to the global climate research effort. The federation of managed SDAP instances offers the following benefits:</p>
+      <ul>
+        <li>Reduces data replication and necessary egress (i.e. reduces the overall operation cost)</li>
+        <li>Harmonizes data and services (i.e. reduces learning and adaptation curves)</li>
+        <li>Independence from computing infrastructure (i.e. selects the best fit infrastructure)</li>
+        <li>Offers programming language-agnostic application and system interface (i.e. researchers should be free to use their preferred programming language)</li>
+      </ul>
 
       <!-- closing -->
       <!-- <h2></h2> -->
