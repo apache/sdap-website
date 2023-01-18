@@ -1,0 +1,38 @@
+---
+---
+
+{% include header.html %}
+
+<h1>Download Apache SDAP (incubating) releases</h1>
+
+<p>The table below contains links to download the Apache SDAP (incubating) module source distributions as well as their signature and checksum files from ASF mirrors.</p>
+
+<h2>SDAP</h2>
+
+<table class="version-table">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Version</th>
+        <th>Module</th>
+        <th>Source Distribution</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% include release.html date="2023-01-18" version="1.0.0" %}
+    </tbody>
+</table>
+
+<h2>Instructions</h2>
+
+<p>To download, build and deploy Apache SDAP (incubating):</p>
+
+<ol>
+    <li>Download the source distributions, signatures and checksums for the version of SDAP you wish to use from the table above.</li>
+    <li><a href="https://www.apache.org/info/verification.html">Verify</a> the downloaded release artifacts.</li>
+    <li>Ensure you have <a href="https://www.docker.com/">Docker</a> installed and running.</li>
+    <li>Use the <a href="https://incubator-sdap-nexus.readthedocs.io/en/latest/build.html">build guide</a> to build the SDAP components.</li>
+    <li>Use the <a href="https://incubator-sdap-nexus.readthedocs.io/en/latest/quickstart.htmll">quickstart guide</a> to deploy the SDAP components.</li>
+</ol>
+
+{% include footer.html %}
