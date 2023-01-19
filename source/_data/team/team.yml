@@ -1,0 +1,129 @@
+- org: Apache Software Foundation - Committers
+  members:
+  - name: Eamon Ford
+    github: eamonford
+    email:
+      address: eamonford@apache.org
+      text: eamonford at apache dot org
+  - name: Edward M Armstrong
+    github: edshred2000
+    email:
+      address: earmstro@apache.org
+      text: earmstro at apache dot org
+  - name: Elizabeth Yam
+    github: echyam
+    email:
+      address: echyam@apache.org
+      text: echyam at apache dot org
+  - name: Frank Greguska
+    github: fgreg
+    email:
+      address: fgreg@apache.org
+      text: fgreg at apache dot org
+  - name: Jocelyn Elya
+    github: jelya
+    email:
+      address: jelya@apache.org
+      text: jelya at apache dot org
+  - name: Joseph C. Jacob
+    github: jjacob7734
+    email:
+      address: jjacob@apache.org
+      text: jjacob at apache dot org
+  - name: Lewis John McGibbney
+    github: lewismc
+    email:
+      address: lewismc@apache.org
+      text: lewismc at apache dot org
+  - name: Maya Debellis
+    github: mayadebellis
+    email:
+      address: maya@apache.org
+      text: maya at apache dot org
+  - name: Nga Thien Chung
+    github: ngachung
+    email:
+      address: nchung@apache.org
+      text: nchung at apache dot org
+  - name: Riley Kuttruff
+    github: RKuttruff
+    email:
+      address: rkk@apache.org
+      text: rkk at apache dot org
+  - name: Stepheny Perez
+    github: skorper
+    email:
+      address: skperez@apache.org
+      text: skperez at apache dot org
+  - name: Thomas Cram
+    github: tcram
+    email:
+      address: tcram@apache.org
+      text: tcram at apache dot org
+  - name: Thomas G Loubrieu
+    github: tloubrieu-jpl
+    email:
+      address: tloubrieu@apache.org
+      text: tloubrieu at apache dot org
+  - name: Thomas Huang
+    github: dataplumber
+    email:
+      address: huang@apache.org
+      text: huang at apache dot org
+  - name: Wai Linn Phyo
+    github: wphyojpl
+    email:
+      address: wphyo@apache.org
+      text: wphyo at apache dot org
+- org: Apache Software Foundation - Mentors
+  members:
+  - name: Julian Hyde
+    github: julianhyde
+    email:
+      address: jhyde@apache.org
+      text: jhyde at apache dot org
+  - name: Jörn Kottmann
+    github: kottmann
+    email:
+      address: joern@apache.org
+      text: joern at apache dot org
+  - name: Trevor Grant
+    github: rawkintrevo
+    email:
+      address: rawkintrevo@apache.org
+      text: rawkintrevo at apache dot org
+- org: Jet Propulsion Laboratory
+  members:
+    - name: Jason Kang
+      github: jasonmlkang
+      email:
+        address: min.liang.kang@jpl.nasa.gov
+        text: min dot liang dot kang at jpl dot nasa dot gov
+    - name: Joe T Roberts
+      github: jtroberts
+      email:
+        address: Joe.T.Roberts@jpl.nasa.gov
+        text: Joe dot T dot Roberts at jpl dot nasa dot gov
+    - name: Joshua A Garde
+      github: joshgarde
+      email:
+        address: joshua.a.garde@jpl.nasa.gov
+        text: joshua dot a dot garde at jpl dot nasa dot gov
+    - name: Kevin M Gill
+      github: kmgill
+      email:
+        address: kevin.m.gill@jpl.nasa.gov
+        text: kevin dot m dot gill at jpl dot nasa dot gov
+    - name: Kevin M Marlis
+      github: kevinmarlis
+      email:
+        address: kevin.marlis@jpl.nasa.gov
+        text: kevin dot m dot marlis at jpl dot nasa dot gov
+    - name: Vardis M Tsontos
+      github: vtsontos
+      email:
+        address: vardis.m.tsontos@jpl.nasa.gov
+        text: vardis dot m dot tsontos at jpl dot nasa dot gov
+
+
+
