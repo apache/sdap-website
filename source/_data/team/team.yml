@@ -30,6 +30,11 @@
     email:
       address: jjacob@apache.org
       text: jjacob at apache dot org
+  - name: Kevin M Marlis
+    github: kevinmarlis
+    email:
+      address: kmarlis@apache.org
+      text: kmarlis at apache dot org
   - name: Lewis John McGibbney
     github: lewismc
     email:
@@ -114,11 +119,6 @@
       email:
         address: kevin.m.gill@jpl.nasa.gov
         text: kevin dot m dot gill at jpl dot nasa dot gov
-    - name: Kevin M Marlis
-      github: kevinmarlis
-      email:
-        address: kevin.marlis@jpl.nasa.gov
-        text: kevin dot m dot marlis at jpl dot nasa dot gov
     - name: Vardis M Tsontos
       github: vtsontos
       email:
