@@ -8,20 +8,83 @@
 <p>The table below contains links to download the Apache SDAP (incubating) module source distributions as well as their signature and checksum files from ASF mirrors.</p>
 
 <h2>SDAP</h2>
-
+<h3>Latest Components</h3>
 <table class="version-table">
     <thead>
     <tr>
-        <th>Date</th>
-        <th>Version</th>
-        <th>Module</th>
+        <th>Component</th>
+        <th>Component Version</th>
+        <th>Release Version</th>
+        <th>Release Date</th>
         <th>Source Distribution</th>
     </tr>
     </thead>
     <tbody>
-    {% include release.html date="2023-01-18" version="1.0.0" %}
+    {% assign latest = site.data.releases.releases.latest %}
+    {% for component in latest %}
+    <tr>
+        <td>{{ component.displayName }}</td>
+        <td>{{ component.componentVersion }}</td>
+        <td>{{ component.release }}</td>
+        <td>{{ component.releaseDate }}</td>
+        <td>
+            <a href="https://www.apache.org/dyn/closer.lua/incubator/sdap/{{ component.release }}-incubating/apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz">
+                [source] apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz
+            </a>
+            <a href="https://www.apache.org/dyn/closer.lua/incubator/sdap/{{ component.release }}-incubating/apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz.asc">
+                [signature] apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz
+            </a>
+            <a href="https://www.apache.org/dyn/closer.lua/incubator/sdap/{{ component.release }}-incubating/apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz.sha512">
+                [checksum] apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
     </tbody>
 </table>
+
+<h3>Release History</h3>
+<table class="version-table">
+    <thead>
+    <tr>
+        <th>Release Version</th>
+        <th>Release Date</th>
+        <th>Component</th>
+        <th>Component Version</th>
+        <th>Source Distribution</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% assign history = site.data.releases.releases.history %}
+    {% for release in history %}
+    {% assign first = true %}
+    {% for component in release.components %}
+    <tr>
+        {% if first %}
+        <td rowspan="{{ release.components.size }}">{{ release.release }}</td>
+        <td rowspan="{{ release.components.size }}">{{ release.releaseDate }}</td>
+        {% assign first = false %}
+        {% endif %}
+        <td>{{ component.displayName }}</td>
+        <td>{{ component.componentVersion }}</td>
+        <td>
+            <a href="https://www.apache.org/dyn/closer.lua/incubator/sdap/{{ component.release }}-incubating/apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz">
+                [source] apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz
+            </a>
+            <a href="https://www.apache.org/dyn/closer.lua/incubator/sdap/{{ component.release }}-incubating/apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz.asc">
+                [signature] apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz
+            </a>
+            <a href="https://www.apache.org/dyn/closer.lua/incubator/sdap/{{ component.release }}-incubating/apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz.sha512">
+                [checksum] apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+    {% endfor %}
+    </tbody>
+</table>
+
+
 
 <h2>Instructions</h2>
 
