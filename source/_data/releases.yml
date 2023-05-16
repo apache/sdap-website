@@ -1,0 +1,35 @@
+releases:
+  latest:
+  - component: nexus
+    displayName: Nexus
+    release: 1.1.0
+    releaseDate: 2023-05-16
+  - component: ingester
+    displayName: Ingester
+    release: 1.1.0
+    releaseDate: 2023-05-16
+  - component: nexusproto
+    displayName: Nexus Protobuf
+    release: 1.0.0
+    releaseDate: 2023-01-18
+#  - component: insitu
+#    displayName: In-Situ Data Services
+#    release: 1.1.0
+#    releaseDate: TBD
+  history:
+  - release: 1.1.0
+    releaseDate: 2023-05-16
+    components:
+    - component: nexus
+      displayName: Nexus
+    - component: ingester
+      displayName: Ingester
+  - release: 1.0.0
+    releaseDate: 2023-01-18
+    components:
+    - component: nexus
+      displayName: Nexus
+    - component: ingester
+      displayName: Ingester
+    - component: nexusproto
+      displayName: Nexus Protobuf
