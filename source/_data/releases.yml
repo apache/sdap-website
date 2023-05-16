@@ -3,11 +3,11 @@ releases:
   - component: nexus
     displayName: Nexus
     release: 1.1.0
-    releaseDate: 2023-05-15
+    releaseDate: 2023-05-16
   - component: ingester
     displayName: Ingester
     release: 1.1.0
-    releaseDate: 2023-05-15
+    releaseDate: 2023-05-16
   - component: nexusproto
     displayName: Nexus Protobuf
     release: 1.0.0
@@ -18,7 +18,7 @@ releases:
 #    releaseDate: TBD
   history:
   - release: 1.1.0
-    releaseDate: 2023-05-15
+    releaseDate: 2023-05-16
     components:
     - component: nexus
       displayName: Nexus
