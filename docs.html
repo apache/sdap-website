@@ -27,11 +27,18 @@
           </div>
           <div class="navbar-right">
             <ul class="nav navbar-nav">
-              <li><a href="/docs">Docs</a></li>
+              <li class="dropdown toggle">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About SDAP <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/docs">Docs</a></li>
+                  <li><a href="/publications">Publications</a></li>
+                  <li><a href="/projects">Projects that use SDAP</a></li>
+                </ul>
+              </li>
               <li><a href="/downloads">Downloads</a></li>
               <li><a href="/blog">Blog</a></li>
               <li><a href="/team">Team &amp; Community</a></li>
-              <li><a href="/resources">Resources</a></li>
+<!--              <li><a href="/resources">Resources</a></li>-->
               <li class="dropdown toggle">
               	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Apache <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -53,10 +60,23 @@
 
 <p>This page describes how to install, use, and contribute to SDAP.</p>
 
-<h2 id="development">Development</h2>
+<h2>Build and Deploy SDAP locally</h2>
 
-<p>You can find out <a href="https://cwiki.apache.org/confluence/display/SDAP/Home">Wiki here</a>. Feel free to add SDAP related content to it!</p>
-<p>Get involved and contribute to SDAP through our <a href="http://sdap.apache.org/team">Community Hubs</a>.
+<p>
+    Guides to <a href="https://incubator-sdap-nexus.readthedocs.io/en/latest/build.html">build</a> and <a href="https://incubator-sdap-nexus.readthedocs.io/en/latest/quickstart.html">deploy</a> SDAP using Docker are available at Read the Docs.
+</p>
+
+<h2>Deployment to Production</h2>
+<p>
+    Included with the SDAP release (Nexus) are the requisite Helm Charts to deploy SDAP to a Kubernetes cluster (currently tested between k8s versions 1.22 and 1.25). This allows for a scalable,
+    production deployment of SDAP to either a privately maintained cluster or to a cloud service provider like Amazon Web Service's Elastic Kubernetes Service.
+</p>
+
+
+<h2 id="development">Contribution</h2>
+
+<p>You can find our <a href="https://cwiki.apache.org/confluence/display/SDAP/Home">Wiki here</a>. Feel free to add SDAP related content to it!</p>
+<p>See how you can get involved and contribute to SDAP through our <a href="http://sdap.apache.org/team#community">Community Hubs</a>.
 
       <!-- footer -->
       <nav class="navbar navbar-default">

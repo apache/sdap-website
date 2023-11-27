@@ -1,4 +1,4 @@
-- org: Apache Software Foundation - Committers
+- org: Apache Software Foundation - Committers & PPMC
   members:
   - name: Eamon Ford
     github: eamonford
@@ -92,12 +92,7 @@
     email:
       address: joern@apache.org
       text: joern at apache dot org
-  - name: Trevor Grant
-    github: rawkintrevo
-    email:
-      address: rawkintrevo@apache.org
-      text: rawkintrevo at apache dot org
-- org: Jet Propulsion Laboratory
+- org: NASA's Jet Propulsion Laboratory, California Institute of Technology
   members:
     - name: Jason Kang
       github: jasonmlkang
@@ -124,6 +119,10 @@
       email:
         address: vardis.m.tsontos@jpl.nasa.gov
         text: vardis dot m dot tsontos at jpl dot nasa dot gov
+#- org: Florida State University, Center for Ocean-Atmospheric Prediction Studies
+#  members:
+#    - name: Amanda Lovett
+#      github: alovett-COAPS
 
 
 
