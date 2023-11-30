@@ -92,7 +92,7 @@
     email:
       address: joern@apache.org
       text: joern at apache dot org
-- org: NASA's Jet Propulsion Laboratory, California Institute of Technology
+- org: Additional Contributors
   members:
     - name: Jason Kang
       github: jasonmlkang
@@ -119,6 +119,18 @@
       email:
         address: vardis.m.tsontos@jpl.nasa.gov
         text: vardis dot m dot tsontos at jpl dot nasa dot gov
+    - name: Marjorie J Lucas
+      github: marjo-luc
+      email:
+        address: marjorie.j.lucas@jpl.nasa.gov
+        text: marjorie dot j dot lucas at jpl dot nasa dot gov
+    - name: Grace Llewellyn
+      github: grallewellyn
+      email:
+        address: grace.llewellyn@jpl.nasa.gov
+        text: grace dot llewellyn at jpl dot nasa dot gov
+
+    # ADD: Marjorie & Grace
 #- org: Florida State University, Center for Ocean-Atmospheric Prediction Studies
 #  members:
 #    - name: Amanda Lovett
