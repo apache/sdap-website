@@ -45,6 +45,11 @@
     email:
       address: jjacob@apache.org
       text: jjacob at apache dot org
+  - name: Jason Kang
+    github: jasonmlkang
+    email:
+      address: jasonmlkang@apache.org
+      text: jasonmlkang at apache dot org
   - name: Riley Kuttruff
     github: RKuttruff
     email:
@@ -104,11 +109,6 @@
     email:
       address: kevin.m.gill@jpl.nasa.gov
       text: kevin dot m dot gill at jpl dot nasa dot gov
-  - name: Jason Kang
-    github: jasonmlkang
-    email:
-      address: min.liang.kang@jpl.nasa.gov
-      text: min dot liang dot kang at jpl dot nasa dot gov
   - name: Grace Llewellyn
     github: grallewellyn
     email:
