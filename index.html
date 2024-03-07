@@ -27,11 +27,19 @@
           </div>
           <div class="navbar-right">
             <ul class="nav navbar-nav">
-              <li><a href="/docs">Docs</a></li>
+              <li class="dropdown toggle">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About SDAP <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/docs">Docs</a></li>
+                  <li><a href="/publications">Publications</a></li>
+                  <li><a href="/projects">Projects that use SDAP</a></li>
+                  <li><a href="/events">Community Events</a></li>
+                </ul>
+              </li>
               <li><a href="/downloads">Downloads</a></li>
               <li><a href="/blog">Blog</a></li>
               <li><a href="/team">Team &amp; Community</a></li>
-              <li><a href="/resources">Resources</a></li>
+<!--              <li><a href="/resources">Resources</a></li>-->
               <li class="dropdown toggle">
               	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Apache <span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -59,54 +67,74 @@
           <li data-target="#coalCarousel" data-slide-to="2"></li>
           <li data-target="#coalCarousel" data-slide-to="3"></li>
           <li data-target="#coalCarousel" data-slide-to="4"></li>
+          <li data-target="#coalCarousel" data-slide-to="5"></li>
+          <li data-target="#coalCarousel" data-slide-to="6"></li>
         </ol>
 
         <div class="carousel-inner" role="listbox">
 
           <div class="item active">
-            <img src="images/carousel-slcp-dat2.jpg" alt="Sea Level Anomaly.
-Courtesy NASA/JPL-Caltech." title="Sea Level Anomaly.
-Courtesy NASA/JPL-Caltech." />
+            <img src="images/2018-03-20-SOTO-Initial-Integration6.jpeg" alt="SOTO" />
             <div class="container">
               <div class="carousel-caption slider-transback">
-                <h1>Sea Level Anomaly</h1>
-                <p>Sea Level Anomaly.</p>
+                <h1>State of the Ocean</h1>
+                <p></p>
               </div>
             </div>
           </div>
 
           <div class="item">
-            <img src="images/carousel-katrina.jpg" alt="Analyze Hurricane Katrina" title="Analyze Hurricane Katrina." />
+            <img src="images/CDMS.png" alt="CDMS" />
             <div class="container">
               <div class="carousel-caption slider-transback">
-                <h1>Hurricane Katrina Study</h1>
-                <p>Compares multiple satellite measurements over Hurricane Katrina</p>
+                <h1>Cloud-based Data Matchup Service</h1>
+                <p>Collocation of satellite data to satellite or insitu data for oceanography</p>
               </div>
             </div>
           </div>
 
           <div class="item">
-            <img src="images/carousel-oceanxtremes.jpg" alt="Computing daily differrences." title="On-the-fly daily differrence computation." />
+            <img src="images/Analyze-AQ-in-Delhi-India-using-satellite-and%20in-situ.png" alt="AQIC" />
             <div class="container">
               <div class="carousel-caption slider-transback">
-                <h1>Analyze Ocean Anomaly</h1>
-                <p>On-the-fly computation of daily differrences.</p>
+                <h1>Air Quality Information Center</h1>
+                <p>Analyzing air quality in Delhi, India with satellite and insitu data</p>
               </div>
             </div>
           </div>
 
           <div class="item">
-            <img src="images/carousel-acf.jpg" alt="The architecture of SDAP, which is the implementation of OceanWorks." title="System Architecture." />
+            <img src="images/IDEAS-Flood-Digital-Twins-Garonne-River.png" alt="IDEAS flood" />
             <div class="container">
               <div class="carousel-caption slider-transback">
-                <h1>System Architecture</h1>
-                <p>SDAP System Architecture.</p>
+                <h1>IDEAS Hydrology and Floods</h1>
+                <p></p>
               </div>
             </div>
           </div>
 
           <div class="item">
-            <img src="images/carousel-coverage.jpg" alt="COVERAGE" title="CEOS Ocean Variables Enabling Research and Applications for GEO" />
+            <img src="images/Fire-Alarm-CO2.jpg" alt="FireAlarm OCO3" />
+            <div class="container">
+              <div class="carousel-caption slider-transback">
+                <h1>FireAlarm</h1>
+                <p>Analyzing trends in CO2 data from OCO-3 Snapshot Area Maps</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/STV-FIS-Tomogram.png" alt="STV" />
+            <div class="container">
+              <div class="carousel-caption slider-transback">
+                <h1>SAR Tomography data</h1>
+                <p>Analyses of SAR tomograms of vegetation <i>(in development)</i></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="images/CEOS-Ocean-Variables-Enabling-Research-and-Applications-for-GEO-1.png" alt="COVERAGE" title="CEOS Ocean Variables Enabling Research and Applications for GEO" />
             <div class="container">
               <div class="carousel-caption slider-transback">
                 <h1>COVERAGE</h1>
@@ -137,6 +165,15 @@ Courtesy NASA/JPL-Caltech." />
         <li>Fast data subsetting</li>
         <li>ML-Driven search and discovery</li>
       </ul>
+
+      <div align="center">
+        <figure>
+          <img src="images/sdap-timeline.png" width="900" alt="Timeline of SDAP's evolution to a mature Apache project" />
+          <figcaption>Timeline of SDAP's evolution to a mature Apache project</figcaption>
+        </figure>
+      </div>
+
+
       <h2>Distributed SDAP</h2>
       <p>The number of publicly hosted SDAP instances has grown over the years. By making their data and services available to the public, these discipline-specific SDAP instances are contributing to the global climate research effort. The federation of managed SDAP instances offers the following benefits:</p>
       <ul>
@@ -145,6 +182,20 @@ Courtesy NASA/JPL-Caltech." />
         <li>Independence from computing infrastructure (i.e. selects the best fit infrastructure)</li>
         <li>Offers programming language-agnostic application and system interface (i.e. researchers should be free to use their preferred programming language)</li>
       </ul>
+
+      <div align="center">
+        <figure>
+          <img src="images/distributed-acf.png" width="900" alt="Distributed SDAP" />
+          <figcaption>Distributed SDAP example diagram</figcaption>
+        </figure>
+      </div>
+
+      <div align="center">
+        <figure>
+          <img src="images/carousel-acf.jpg" width="900" alt="The architecture of SDAP." title="System Architecture." />
+          <figcaption>The architecture of SDAP.</figcaption>
+        </figure>
+      </div>
 
       <!-- closing -->
       <!-- <h2></h2> -->
@@ -155,7 +206,7 @@ Courtesy NASA/JPL-Caltech." />
         <div class="navbar-header">
           <a class="navbar-brand" href="">SDAP</a>
         </div>
-        <div class="navbar-text pull-right">&copy; 2017-2023 The Apache Software Foundation. Licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>. <a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy Policy</a><br/>
+        <div class="navbar-text pull-right">&copy; 2017-2024 The Apache Software Foundation. Licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>. <a href="https://privacy.apache.org/policies/privacy-policy-public.html">Privacy Policy</a><br/>
         Apache SDAP, SDAP, Apache, the Apache feather logo, and the Apache SDAP project logo are trademarks of The Apache Software Foundation.</div>
           <div align="center">
               <a href="https://incubator.apache.org/">

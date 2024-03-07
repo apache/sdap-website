@@ -12,12 +12,28 @@
 }
 
 .carousel {
-    background-color: black;
+    background-color: transparent;
+    margin-top: 20px;
+    padding: 1%;
 }
 
 .carousel .item img {
     float: none;
     margin: 0 auto;
+}
+
+.carousel-control {
+    background-image: none !important;
+    color: black;
+}
+
+.carousel-control:focus{
+    color: #333;
+}
+
+.carousel-control.right .carousel-control.left {
+    background-image: none !important;
+    background: transparent;
 }
 
 .team-avatar {

@@ -9,7 +9,7 @@
 
 <p>The SDAP team happily welcomes contributors and supporters of our work. Contributions, bug reports, and suggestions are welcome for the core products, website, documentation, and everything else! See below for more information on joining our community, submitting effective contributions and bug reports.</p>
 
-<h2>Members</h2>
+<h2>Team</h2>
 
 {% for org in site.data.team.team %}
   <h3>{{ org.org }}</h3>
@@ -34,46 +34,67 @@
 {% endfor %}
 
 <div class="ui vertical segment">
-  <h2 class="ui header">Mailing Lists</h2>
-  <h3 class="ui header">
-    <i class="user icon"></i>
-    <div class="content">Users</div>
-  </h3>
+  <h2 class="ui header" id="community">Community Hubs</h2>
+  <h3 class="ui header">Mailing Lists</h3>
   <p>
-    For users of Apache SDAP who want to keep up to date with new releases and community highlights.  To subscribe, email <a href="mailto:user-subscribe@sdap.apache.org">user-subscribe@sdap.apache.org</a>.
+    The SDAP mailing lists are the official form of communication for the SDAP community, where we hold discussions and votes on new features and releases as well as make project announcements.
   </p>
-  <h3 class="ui header">
+<!--  <h4 class="ui header">-->
+<!--    <i class="user icon"></i>-->
+<!--    <div class="content">Users</div>-->
+<!--  </h4>-->
+<!--  <p>-->
+<!--    For users of Apache SDAP who want to keep up to date with new releases and community highlights.  To subscribe, email <a href="mailto:user-subscribe@sdap.apache.org">user-subscribe@sdap.apache.org</a>.-->
+<!--  </p>-->
+  <h4 class="ui header">
     <i class="code icon"></i>
-    <div class="content">Dev</div>
-  </h3>
+    <div class="content">Dev@</div>
+  </h4>
   <p>
-    For contributors to Apache SDAP or those interested in ongoing design and development efforts.  To subscribe, email <a href="mailto:dev-subscribe@sdap.apache.org">dev-subscribe@sdap.apache.org</a>.
+    For contributors to Apache SDAP or those interested in ongoing design and development efforts.
+    <br>
+    <a href="mailto:dev@sdap.apache.org">Message</a>
+    &bull;
+    <a href="mailto:dev-subscribe@sdap.apache.org?subject=subscribe">Subscribe</a>
+    &bull;
+    <a href="mailto:dev-unsubscribe@sdap.apache.org?subject=subscribe">Unsubscribe</a>
+    &bull;
+    <a href="https://lists.apache.org/list.html?dev@sdap.apache.org">Archive</a>
+  </p>
+  <h4 class="ui header">
+    <i class="upload icon"></i>
+    <div class="content">Commits@</div>
+  </h4>
+  <p>
+    For emails-on-commit across all Apache SDAP products.
+    <br>
+    <a href="mailto:commits@sdap.apache.org">Message</a>
+    &bull;
+    <a href="mailto:commits-subscribe@sdap.apache.org?subject=subscribe">Subscribe</a>
+    &bull;
+    <a href="mailto:commits-unsubscribe@sdap.apache.org?subject=subscribe">Unsubscribe</a>
+    &bull;
+    <a href="https://lists.apache.org/list.html?commits@sdap.apache.org">Archive</a>
   </p>
   <h3 class="ui header">
-    <i class="upload icon"></i>
-    <div class="content">Commits</div>
+    <div class="content">Slack</div>
   </h3>
   <p>
-    For emails-on-commit across all Apache SDAP products.  To subscribe, email <a href="mailto:commits-subscribe@sdap.apache.org">commits-subscribe@sdap.apache.org</a>.
+    The SDAP project developers maintain a Slack channel <code>#sdap</code> in the <code>the-asf</code> organization. <br>
+    <a href="https://the-asf.slack.com/archives/CN8UJ3D0V">Link</a>
   </p>
-</div>
-
-<div class="ui vertical segment">
-  <h2 class="ui header">Community Hubs</h2>
   <h3 class="ui header">
     <i class="github icon"></i>
     <div class="content">GitHub</div>
   </h3>
   <p>
-    <a href="https://github.com/apache?q=incubator-sdap">Find our code on Github</a> to browse and contribute.
+    SDAP's codebase is spread across 3 repositories for the 3 major components:
   </p>
-  <h3 class="ui header">
-    <i class="twitter icon"></i>
-    <div class="content">Twitter</div>
-  </h3>
-  <p>
-    <a href="https://twitter.com/apachesdap">Follow us on Twitter</a> to keep up to date on Apache SDAP and related developments.
-  </p>
+  <ul>
+    <li><a href="https://github.com/apache/incubator-sdap-nexus">NEXUS</a>: The main data analysis component of SDAP.</li>
+    <li><a href="https://github.com/apache/incubator-sdap-ingester">Ingester</a>: Processes and prepares input data for SDAP, as well as manages the various datasets.</li>
+    <li><a href="https://github.com/apache/incubator-sdap-nexusproto">Nexusproto</a>: Protobuf spec for SDAP's data tile format: the intermediate data format from raw input to result.</li>
+  </ul>
   <h3 class="ui header">
     <i class="bug icon"></i>
     <div class="content">Issues and Bugs</div>
@@ -87,6 +108,16 @@
   </h3>
   <p>
     See our <a href="https://cwiki.apache.org/confluence/display/SDAP">wiki</a> for detailed information on project organization, roadmaps, etc.
+  </p>
+    <h3 class="ui header">
+    <div class="content">Social Media</div>
+  </h3>
+  <h4 class="ui header">
+    <i class="twitter icon"></i>
+    <div class="content">Twitter</div>
+  </h4>
+  <p>
+    <a href="https://twitter.com/apachesdap">Follow us on Twitter</a> to keep up to date on Apache SDAP and related developments.
   </p>
 </div>
 
