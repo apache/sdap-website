@@ -1,4 +1,4 @@
-- org: Apache Software Foundation - Committers & PPMC
+- org: Apache Software Foundation - Committers & PMC
   members:
   - name: Edward M Armstrong
     github: edshred2000
@@ -40,6 +40,11 @@
     email:
       address: huang@apache.org
       text: huang at apache dot org
+  - name: Julian Hyde
+    github: julianhyde
+    email:
+      address: jhyde@apache.org
+      text: jhyde at apache dot org
   - name: Joseph C. Jacob
     github: jjacob7734
     email:
@@ -50,6 +55,11 @@
     email:
       address: jasonmlkang@apache.org
       text: jasonmlkang at apache dot org
+  - name: "J\xF6rn Kottmann"
+    github: kottmann
+    email:
+      address: joern@apache.org
+      text: joern at apache dot org
   - name: Riley Kuttruff
     github: RKuttruff
     email:
@@ -85,18 +95,6 @@
     email:
       address: echyam@apache.org
       text: echyam at apache dot org
-- org: Apache Software Foundation - Mentors
-  members:
-  - name: Julian Hyde
-    github: julianhyde
-    email:
-      address: jhyde@apache.org
-      text: jhyde at apache dot org
-  - name: "J\xF6rn Kottmann"
-    github: kottmann
-    email:
-      address: joern@apache.org
-      text: joern at apache dot org
 - org: Additional Contributors
   members:
   - name: Joshua A Garde

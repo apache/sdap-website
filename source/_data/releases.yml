@@ -4,14 +4,17 @@ releases:
     displayName: Nexus
     release: 1.2.0
     releaseDate: 2024-03-15
+    incubating: true
   - component: ingester
     displayName: Ingester
     release: 1.2.0
     releaseDate: 2024-03-15
+    incubating: true
   - component: nexusproto
     displayName: Nexus Protobuf
     release: 1.0.0
     releaseDate: 2023-01-18
+    incubating: true
 #  - component: insitu
 #    displayName: In-Situ Data Services
 #    release: 1.1.0
@@ -19,6 +22,7 @@ releases:
   history:
   - release: 1.2.0
     releaseDate: 2024-03-15
+    incubating: true
     components:
     - component: nexus
       displayName: Nexus
@@ -26,6 +30,7 @@ releases:
       displayName: Ingester
   - release: 1.1.0
     releaseDate: 2023-05-16
+    incubating: true
     components:
     - component: nexus
       displayName: Nexus
@@ -33,6 +38,7 @@ releases:
       displayName: Ingester
   - release: 1.0.0
     releaseDate: 2023-01-18
+    incubating: true
     components:
     - component: nexus
       displayName: Nexus

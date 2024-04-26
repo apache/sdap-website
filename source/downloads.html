@@ -3,9 +3,9 @@
 
 {% include header.html %}
 
-<h1>Download Apache SDAP (incubating) releases</h1>
+<h1>Download Apache SDAP releases</h1>
 
-<p>The table below contains links to download the Apache SDAP (incubating) module source distributions as well as their signature and checksum files from ASF mirrors.</p>
+<p>The table below contains links to download the Apache SDAP module source distributions as well as their signature and checksum files from ASF mirrors.</p>
 
 <h2>SDAP</h2>
 <h3>Latest Components</h3>
@@ -21,19 +21,24 @@
     <tbody>
     {% assign latest = site.data.releases.releases.latest %}
     {% for component in latest %}
+    {% if component.incubating %}
+        {% assign inc = "-incubating" %}
+    {% else %}
+        {% assign inc = "" %}
+    {% endif %}
     <tr>
         <td>{{ component.displayName }}</td>
         <td>{{ component.release }}</td>
         <td>{{ component.releaseDate }}</td>
         <td>
-            <a href="https://www.apache.org/dyn/closer.lua/incubator/sdap/{{ component.release }}-incubating/apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz">
-                [source] apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz
+            <a href="https://www.apache.org/dyn/closer.lua/sdap/{{ component.release }}{{ inc }}/apache-sdap-{{ component.component }}-{{ component.release }}{{ inc }}-src.tar.gz">
+                [source] apache-sdap-{{ component.component }}-{{ component.release }}{{ inc }}-src.tar.gz
             </a>
-            <a href="https://downloads.apache.org/incubator/sdap/{{ component.release }}-incubating/apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz.asc">
-                [signature] apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz
+            <a href="https://downloads.apache.org/sdap/{{ component.release }}{{ inc }}/apache-sdap-{{ component.component }}-{{ component.release }}{{ inc }}-src.tar.gz.asc">
+                [signature] apache-sdap-{{ component.component }}-{{ component.release }}{{ inc }}-src.tar.gz
             </a>
-            <a href="https://downloads.apache.org/incubator/sdap/{{ component.release }}-incubating/apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz.sha512">
-                [checksum] apache-sdap-{{ component.component }}-{{ component.release }}-incubating-src.tar.gz
+            <a href="https://downloads.apache.org/sdap/{{ component.release }}{{ inc }}/apache-sdap-{{ component.component }}-{{ component.release }}{{ inc }}-src.tar.gz.sha512">
+                [checksum] apache-sdap-{{ component.component }}-{{ component.release }}{{ inc }}-src.tar.gz
             </a>
         </td>
     </tr>
@@ -54,6 +59,11 @@
     <tbody>
     {% assign history = site.data.releases.releases.history %}
     {% for release in history %}
+    {% if release.incubating %}
+        {% assign inc = "-incubating" %}
+    {% else %}
+        {% assign inc = "" %}
+    {% endif %}
     {% assign first = true %}
     {% for component in release.components %}
     <tr>
@@ -64,14 +74,14 @@
         {% endif %}
         <td>{{ component.displayName }}</td>
         <td>
-            <a href="https://www.apache.org/dyn/closer.lua/incubator/sdap/{{ release.release }}-incubating/apache-sdap-{{ component.component }}-{{ release.release }}-incubating-src.tar.gz">
-                [source] apache-sdap-{{ component.component }}-{{ release.release }}-incubating-src.tar.gz
+            <a href="https://www.apache.org/dyn/closer.lua/sdap/{{ release.release }}{{ inc }}/apache-sdap-{{ component.component }}-{{ release.release }}{{ inc }}-src.tar.gz">
+                [source] apache-sdap-{{ component.component }}-{{ release.release }}{{ inc }}-src.tar.gz
             </a>
-            <a href="https://downloads.apache.org/incubator/sdap/{{ release.release }}-incubating/apache-sdap-{{ component.component }}-{{ release.release }}-incubating-src.tar.gz.asc">
-                [signature] apache-sdap-{{ component.component }}-{{ release.release }}-incubating-src.tar.gz
+            <a href="https://downloads.apache.org/sdap/{{ release.release }}{{ inc }}/apache-sdap-{{ component.component }}-{{ release.release }}{{ inc }}-src.tar.gz.asc">
+                [signature] apache-sdap-{{ component.component }}-{{ release.release }}{{ inc }}-src.tar.gz
             </a>
-            <a href="https://downloads.apache.org/incubator/sdap/{{ release.release }}-incubating/apache-sdap-{{ component.component }}-{{ release.release }}-incubating-src.tar.gz.sha512">
-                [checksum] apache-sdap-{{ component.component }}-{{ release.release }}-incubating-src.tar.gz
+            <a href="https://downloads.apache.org/sdap/{{ release.release }}{{ inc }}/apache-sdap-{{ component.component }}-{{ release.release }}{{ inc }}-src.tar.gz.sha512">
+                [checksum] apache-sdap-{{ component.component }}-{{ release.release }}{{ inc }}-src.tar.gz
             </a>
         </td>
     </tr>
@@ -84,14 +94,14 @@
 
 <h2>Instructions</h2>
 
-<p>To download, build and deploy Apache SDAP (incubating):</p>
+<p>To download, build and deploy Apache SDAP:</p>
 
 <ol>
     <li>Download the source distributions, signatures and checksums for the version of SDAP you wish to use from the table above.</li>
-    <li><a href="https://www.apache.org/info/verification.html">Verify</a> the downloaded release artifacts. You can find a list of SDAP contributors' keys in the <a href="https://downloads.apache.org/incubator/sdap/KEYS">KEYS file here</a>.</li>
+    <li><a href="https://www.apache.org/info/verification.html">Verify</a> the downloaded release artifacts. You can find a list of SDAP contributors' keys in the <a href="https://downloads.apache.org/sdap/KEYS">KEYS file here</a>.</li>
     <li>Ensure you have <a href="https://www.docker.com/">Docker</a> installed and running.</li>
-    <li>Use the <a href="https://incubator-sdap-nexus.readthedocs.io/en/latest/build.html">build guide</a> to build the SDAP components.</li>
-    <li>Use the <a href="https://incubator-sdap-nexus.readthedocs.io/en/latest/quickstart.htmll">quickstart guide</a> to deploy the SDAP components.</li>
+    <li>Use the <a href="https://sdap-nexus.readthedocs.io/en/latest/build.html">build guide</a> to build the SDAP components.</li>
+    <li>Use the <a href="https://sdap-nexus.readthedocs.io/en/latest/quickstart.htmll">quickstart guide</a> to deploy the SDAP components.</li>
 </ol>
 
 {% include footer.html %}
