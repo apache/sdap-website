@@ -2,14 +2,14 @@ releases:
   latest:
   - component: nexus
     displayName: Nexus
-    release: 1.2.0
-    releaseDate: 2024-03-15
-    incubating: true
+    release: 1.3.0
+    releaseDate: 2024-06-xx
+    incubating: false
   - component: ingester
     displayName: Ingester
-    release: 1.2.0
-    releaseDate: 2024-03-15
-    incubating: true
+    release: 1.3.0
+    releaseDate: 2024-06-xx
+    incubating: false
   - component: nexusproto
     displayName: Nexus Protobuf
     release: 1.0.0
@@ -20,6 +20,14 @@ releases:
 #    release: 1.1.0
 #    releaseDate: TBD
   history:
+  - release: 1.3.0
+    releaseDate: 2024-06-xx
+    incubating: false
+    components:
+    - component: nexus
+      displayName: Nexus
+    - component: ingester
+      displayName: Ingester
   - release: 1.2.0
     releaseDate: 2024-03-15
     incubating: true
