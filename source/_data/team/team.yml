@@ -65,6 +65,11 @@
     email:
       address: rkk@apache.org
       text: rkk at apache dot org
+  - name: Grace Llewellyn
+    github: grallewellyn
+    email:
+      address: gracellewellyn@apache.org
+      text: gracellewellyn at apache dot org
   - name: Thomas G Loubrieu
     github: tloubrieu-jpl
     email:
@@ -90,6 +95,11 @@
     email:
       address: wphyo@apache.org
       text: wphyo at apache dot org
+  - name: Joe T Roberts
+    github: jtroberts
+    email:
+      address: jtroberts@apache.org
+      text: jtroberts at apache dot org
   - name: Elizabeth Yam
     github: echyam
     email:
@@ -107,21 +117,11 @@
     email:
       address: kevin.m.gill@jpl.nasa.gov
       text: kevin dot m dot gill at jpl dot nasa dot gov
-  - name: Grace Llewellyn
-    github: grallewellyn
-    email:
-      address: grace.llewellyn@jpl.nasa.gov
-      text: grace dot llewellyn at jpl dot nasa dot gov
   - name: Marjorie J Lucas
     github: marjo-luc
     email:
       address: marjorie.j.lucas@jpl.nasa.gov
       text: marjorie dot j dot lucas at jpl dot nasa dot gov
-  - name: Joe T Roberts
-    github: jtroberts
-    email:
-      address: Joe.T.Roberts@jpl.nasa.gov
-      text: Joe dot T dot Roberts at jpl dot nasa dot gov
   - name: Vardis M Tsontos
     github: vtsontos
     email:
