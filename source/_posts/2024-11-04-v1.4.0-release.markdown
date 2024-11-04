@@ -1,0 +1,47 @@
+---
+layout: post
+date: "2024-11-04"
+author: Riley Kuttruff
+version: 1.4.0
+categories: [release]
+---
+<!--
+{% comment %}
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to you under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+{% endcomment %}
+-->
+
+The SDAP community is pleased to announce our latest release of Apache SDAP, version 1.4.0. This release includes introductory
+support for 3-dimensional data, with a reference implementation for visualizing TomoSAR (3-dimensional synthetic aperture radar
+tomography). Other 3D use cases could include oceanographic modelling at different depths or atmospheric measurements at different
+elevations/pressures.
+
+[Instructions for building Docker images from the source release](https://sdap-nexus.readthedocs.io/en/1.4.0/build.html)
+
+[Instructions for deploying locally to test](https://sdap-nexus.readthedocs.io/en/1.4.0/quickstart.html)
+
+Release notes:
+- [Nexus](https://github.com/apache/sdap-nexus/blob/1.4.0/CHANGELOG.md)
+- [Ingester](https://github.com/apache/sdap-ingester/blob/1.4.0/CHANGELOG.md)
+- [Nexus Proto](https://github.com/apache/sdap-nexusproto/blob/1.4.0/CHANGELOG.md)
+
+Resources:
+- Github: 
+  - [Nexus](https://github.com/apache/sdap-nexus)
+  - [Ingester](https://github.com/apache/sdap-ingester)
+  - [Nexus Proto](https://github.com/apache/sdap-nexusproto)
+- [Jira](https://issues.apache.org/jira/projects/SDAP/issues)
+- [Mailing list](mailto:dev@sdap.apache.org)
