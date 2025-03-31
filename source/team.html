@@ -18,11 +18,17 @@
 
     {% for member in org.members %}
     <div class="team-member col-md-6">
-    <img src="images/avatars/{{member.github}}.png" class="team-avatar img-thumbnail" />
+      {%if member.github %}
+      <img src="images/avatars/{{member.github}}.png" class="team-avatar img-thumbnail" />
+      {% else %}
+      <img src="images/avatar_nogithub.png" class="team-avatar img-thumbnail" />
+      {% endif %}
     <h4>{{member.name}}</h4>
     <dl>
+      {%if member.github %}
       <dt>GitHub:</dt>
       <dd><a class="external" href="https://github.com/{{member.github}}">{{member.github}}</a></dd>
+      {% endif %}
       <dt>Email:</dt>
       <dd><a href="mailto:{{member.email.address}}">{{member.email.text}}</a></dd>
     </dl>
